@@ -1,0 +1,208 @@
+/* color palette from <https://github.com/vuejs/theme> */
+
+:root {
+  --primaryColor: #f54811;
+    --secondaryColor: #31cec5;
+    --grayscaleOne: #F8F8F8;
+    --grayscaleTwo: #EEF1F2;
+    --grayscaleThree: #E6EAEB;
+    --grayscaleFour: #C7CED0;
+    --grayscaleFive: #B2B7BA;
+    --grayscaleSix: #828990;
+    --grayscaleSeven: #646670;
+    --grayscaleEight: #404250;
+    --grayscaleNine: #2B2C3B;
+    --grayscaleTen: #C2C2C2;
+    --primaryTextColor: #2b2c3b;
+    --secondaryTextColor: #575962;
+    --inverseTextColor: #ffffff;
+    --linkTextColor: #f54811;
+    --linkHoverColor: #f54811;
+    --moduleMaxWidth: 1240px;
+    --containerMaxWidth: 1240px;
+    --containerXlMaxWidth: 1440px;
+    --containerMediumWidth: 1040px;
+    --containerNarrowWidth: 800px;
+    --gap: 20px;
+    --verticalGap: var(--gap);
+    --siteBgColor: #ffffff;
+    --backgroundColor: #eef1f2;
+    --borderColor: #aecfd8;
+    --headerBgColor: #f8f8f8;
+    --headerTextColor: #828990;
+    --headerHeight: 72px;
+    --categoryLinkColor: #2CB9B1;
+    --categoryLinkColorLight: #31CEC5;
+    --categoryLinkColorDark: #008476;
+    --footerBgColor: #090b21;
+    --footerTextColor: #ffffff;
+    --footerLinkTextColor: #ffffff;
+    --buttonBorderWidth: 1px;
+    --buttonBorderRadius: 6px;
+    --primaryButtonBgColor: #d93706;
+    --primaryButtonBorderColor: #d93706;
+    --primaryButtonTextColor: #ffffff;
+    --primaryButtonHoverBgColor: #c12800;
+    --primaryButtonHoverBorderColor: #c12800;
+    --primaryButtonHoverTextColor: #ffffff;
+    --secondaryButtonBgColor: #090b21;
+    --secondaryButtonBorderColor: #090b21;
+    --secondaryButtonTextColor: #ffffff;
+    --secondaryButtonHoverBgColor: #2a2d42;
+    --secondaryButtonHoverBorderColor: #2a2d42;
+    --secondaryButtonHoverTextColor: #ffffff;
+    --tertiaryButtonBgColor: transparent;
+    --tertiaryButtonBorderColor: #090b21;
+    --tertiaryButtonTextColor: #2a2d42;
+    --tertiaryButtonHoverBgColor: #5A5A6A0D;
+    --tertiaryButtonHoverBorderColor: #484a61;
+    --tertiaryButtonHoverTextColor: #2a2d42;
+    --primaryHeadlineFont: Druk Web;
+    --bodyFont: IBM Plex Sans;
+    --secondaryBodyFont: IBM Plex Mono;
+    --white: #ffffff;
+    --black: #090B21;
+    --spark: #31CEC5;
+    --darkspark: #008476;
+    --orange: #F54811;
+    --darkorange: #C12800;
+    --darkSub: #606060;
+    --error: #E04137;
+    --success: #2DD26F;
+    --live: #f16024;
+    --bannerBgColor: #f16024;
+    --bannerTextColor: #ffffff;
+  /* --moduleGradientColorStart: #ffffff;
+  --moduleGradientColorEnd: #f7f7ff;
+  --moduleGradientDirection: to bottom;
+  --moduleBgOpacity: NaN;
+  --boxBgOpacity: NaN;
+  --moduleBgImage: url(@/assets/images/home-background.png); */
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --display: 7.5rem;
+    --display-3: 4rem;
+    --title-0: 5.5rem;
+    --title-1: 5.5rem;
+    --title-2: 4.5rem;
+    --title-2-5: 2.75rem;
+    --title-3: 2.25rem;
+    --title-4: 1.75rem;
+    --title-5: 1.25rem;
+    --description-1: 1.375rem;
+    --description-2: 1.125rem;
+    --description-3: 1rem;
+    --description-4: 0.875rem;
+    --nav-1: 0.875rem;
+    --category-1: 1rem;
+    --label-1: 1rem;
+    --label-2: 0.875rem;
+    --quote-1: 3rem;
+    --tag-1: 1rem;
+    --tag-2: 0.875rem;
+    --tag-3: 0.6875rem;
+  }
+}
+
+/* :root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+} */
+
+/* semantic color variables for this project */
+/* :root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+} */
+
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+body {
+  margin: 0;
+}
+
+body * {
+  font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
