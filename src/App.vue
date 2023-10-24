@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-// import HeaderMenu from '@/components/HeaderMenu.vue'
+import HeaderMenu from '@/components/HeaderMenu.vue'
 // import { createServiceNoToken } from '@/service/axios'
 // import { ref, onMounted, watch } from 'vue'
 // import { Form, Field, ErrorMessage } from 'vee-validate';
