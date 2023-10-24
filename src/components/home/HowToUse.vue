@@ -9,12 +9,12 @@ const schema = yup.object({
   description: yup.string().required(),
 });
 
-async function onSubmit(values) {
+async function onSubmit(values: any) {
   try {
     await createBlocks(values)
     console.log('hihi');
     
-  } catch (error) {
+  } catch (error: any) {
     console.log('error: ', error.response);
     
   }
