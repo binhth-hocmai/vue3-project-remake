@@ -2,21 +2,33 @@
 
 import { Form, Field, ErrorMessage } from 'vee-validate';
 import * as yup from 'yup';
-import { createBlocks } from '@/service/blockService'
+import { getBlocks, createBlocks } from '@/service/blockService'
+import { useBlockStore } from '@/stores/block'
+import { onMounted, watch } from 'vue';
+
+const blockStore = useBlockStore()
 
 const schema = yup.object({
   percent: yup.number().required(),
   description: yup.string().required(),
 });
 
+onMounted(async () => {
+  try {
+    const listBlock = await getBlocks()
+    blockStore.importBlock(listBlock?.data || [])
+  } catch (error: any) {
+    console.log('error: ', error);
+  }
+})
+
 async function onSubmit(values: any) {
   try {
     await createBlocks(values)
-    console.log('hihi');
-    
+    const listBlock = await getBlocks()
+    blockStore.importBlock(listBlock?.data || [])
   } catch (error: any) {
-    console.log('error: ', error.response);
-    
+    console.log('error: ', error);
   }
 }
 
@@ -77,7 +89,11 @@ async function onSubmit(values: any) {
       <div class="home-second-section__precents">
         <h2 class="home-second-section__precents-title">Customers around the world count on Nitro</h2>
         <div class="home-second-section__precents-blocks">
-          <div class="home-second-section__precents-blocks-item">
+          <div v-for="block in blockStore.blocks" class="home-second-section__precents-blocks-item">
+            <h3>{{block?.percent}}</h3>
+            <p>{{block?.description}}</p>
+          </div>
+          <!-- <div class="home-second-section__precents-blocks-item">
             <h3>95%</h3>
             <p>Customer satisfaction rating</p>
           </div>
@@ -92,22 +108,22 @@ async function onSubmit(values: any) {
           <div class="home-second-section__precents-blocks-item">
             <h3>95%</h3>
             <p>Customer satisfaction rating</p>
-          </div>
-          <div class="home-second-section__precents-blocks-item">
-            <h3>95%</h3>
-            <p>Customer satisfaction rating</p>
-          </div>
+          </div> -->
         </div>
-        <Form :validation-schema="schema" @submit="onSubmit">
-          <div class="display-flex">
+        <Form class="home-second-section__precents-form" :validation-schema="schema" @submit="onSubmit">
+          <div class="display-flex home-second-section__precents-form-item">
             <label for="percent">Percent:</label>
-            <Field name="percent" type="number" />
-            <ErrorMessage name="percent" />
+            <div class="display-flex flex-direction-column home-second-section__precents-form-item-input">
+              <Field name="percent" type="number" />
+              <ErrorMessage name="percent" />
+            </div>
           </div>
-          <div class="display-flex">
+          <div class="display-flex home-second-section__precents-form-item">
             <label for="description">Description:</label>
-            <Field name="description" type="string" />
-            <ErrorMessage name="description" />
+            <div class="display-flex flex-direction-column home-second-section__precents-form-item-input">
+              <Field name="description" type="string" />
+              <ErrorMessage name="description" />
+            </div>
           </div>
           <button>Submit</button>
         </Form>
@@ -325,6 +341,35 @@ async function onSubmit(values: any) {
             font-family: var(--bodyFont),Arial,Helvetica,sans-serif;
             color: var(--secondaryTextColor);
             margin: 0;
+          }
+        }
+      }
+
+      &-form {
+        max-width: 600px;
+        margin: 16px auto;
+
+        &-item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+
+          label {
+            width: 30%;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            display: flex;
+          }
+
+          &-input {
+            width: 100%;
+
+            input {
+              min-height: 24px;
+              outline: none;
+            }
           }
         }
       }

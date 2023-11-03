@@ -1,4 +1,4 @@
 export interface Block {
-  precent: number;
-  description: string;
+  precent?: number;
+  description?: string;
 }

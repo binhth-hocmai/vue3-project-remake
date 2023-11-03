@@ -15,7 +15,7 @@ export const getBlocks = async () => {
 }
 
 export const createBlocks = async (data: Block) => {
-  const url = '/binhth/resource/blocksádwda'
+  const url = '/binhth/resource/blocks'
   const response = await instance.post(url, data)
-  return response.data;
+  return Promise.resolve(response.data);
 }
